@@ -1,5 +1,5 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
 const { NODE_ENV } = process.env;
 
@@ -20,15 +20,22 @@ NODE_ENV === 'production'  && plugins.push(
       unsafe_comps: true,
       screw_ie8: true,
       warnings: false,
-    },
+    }
   })
 );
 
-export default {
+module.exports = {
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
-    ],
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015']
+        }
+      },
+    ]
   },
 
   entry: [

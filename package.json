@@ -4,11 +4,12 @@
   "description": "Additional effects for thunks to improve testability. Fully compatible with redux-thunk.",
   "main": "lib/index.js",
   "scripts": {
+    "clean": "rm -rf lib dist es",
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --presets=es2015",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --presets=es2015",
-    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
-    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack",
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack --presets=es2015",
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack --presets=es2015",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "babel-loader": "^6.2.8",
     "babel-preset-es2015": "^6.18.0",
     "cross-env": "^3.1.3",
+    "path": "^0.12.7",
     "webpack": "^1.13.3"
   }
 }

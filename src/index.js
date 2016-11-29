@@ -7,9 +7,9 @@ export const effectsMiddlewareCreator = (effectCreators) =>
     const effects = {};
     Object.keys(effectCreators).forEach(key => {
       const effectCreator = effectCreators[key];
-    effects[key] = effectCreator({ dispatch, getState });
-  });
-    return action(effects);
+      effects[key] = effectCreator({ dispatch, getState });
+    });
+    return action(dispatch, getState, effects);
   }
   return next(action);
 };

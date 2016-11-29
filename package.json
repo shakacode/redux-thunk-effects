@@ -4,6 +4,11 @@
   "description": "Additional effects for thunks to improve testability. Fully compatible with redux-thunk.",
   "main": "lib/index.js",
   "scripts": {
+    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +26,13 @@
   "bugs": {
     "url": "https://github.com/shakacode/redux-thunk-effects/issues"
   },
-  "homepage": "https://github.com/shakacode/redux-thunk-effects#readme"
+  "homepage": "https://github.com/shakacode/redux-thunk-effects#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "cross-env": "^3.1.3",
+    "webpack": "^1.13.3"
+  }
 }

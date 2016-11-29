@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "Additional effects for thunks to improve testability. Fully compatible with redux-thunk.",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "es",
+    "src",
+    "dist"
+  ],
   "scripts": {
     "clean": "rm -rf lib dist es",
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",

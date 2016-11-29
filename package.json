@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --presets=es2015",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --presets=es2015",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
     "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"

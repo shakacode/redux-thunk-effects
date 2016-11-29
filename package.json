@@ -1,6 +1,6 @@
 {
   "name": "redux-thunk-effects",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Additional effects for thunks to improve testability. Fully compatible with redux-thunk.",
   "main": "lib/index.js",
   "files": [

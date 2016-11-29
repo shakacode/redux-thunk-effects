@@ -1,0 +1,25 @@
+{
+  "name": "redux-thunk-effects",
+  "version": "0.0.1",
+  "description": "Additional effects for thunks to improve testability. Fully compatible with redux-thunk.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shakacode/redux-thunk-effects.git"
+  },
+  "keywords": [
+    "redux",
+    "thunk",
+    "effect",
+    "react"
+  ],
+  "author": "Alexey Karasev <karasev.alexey@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shakacode/redux-thunk-effects/issues"
+  },
+  "homepage": "https://github.com/shakacode/redux-thunk-effects#readme"
+}
